@@ -1,0 +1,17 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Lista de tarefas baseado no Microsoft To do",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "html5",
+    "css3",
+    "js",
+    "node"
+  ],
+  "author": "Guilherme Marciano",
+  "license": "MIT"
+}
