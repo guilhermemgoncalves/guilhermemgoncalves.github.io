@@ -3,13 +3,17 @@
 
 .details, .container,.menu
 {
-  border: var(--border);
+  
   height: 100vh;
   flex-direction: column;
 }
+.details
+{
+    border: var(--border);
+}
 .menu {
     width: var(--menuWidth);    
-    border-color: #24FF00;
+    background-color: #f2f2f2;
 }
 .container {
     width: calc(100vw - (var(--menuWidth) + var(--detailsWidht)));
@@ -90,3 +94,55 @@ header .menu__header__profile> div
 }
 
 /*Fim Menu Header   */
+/* main - .container */
+.container{
+    height: inherit;
+    width: 100%;
+    flex-direction: column;
+    background: url(/assets/images/bg-phone.jpg) center no-repeat;
+    background-size: cover;
+    
+}
+.container > header,
+.container > footer
+{
+    height: 133px;
+    border: solid 1px red;
+}
+.container > section.tasks{
+    height: calc(100vh - (133px*2));
+}
+.container>header{
+   
+    flex-direction: column;
+    color: #fff;
+    text-shadow: 0 0 2px #333;    
+    padding: 0% 5%;
+}
+.container>header>div:first-child {
+    margin-top: 2%;
+    justify-content: space-between;
+}
+@media (min-width: 768px)
+{
+    .container{
+        background: url(/assets/images/bg-tablet.jpg);
+        background-size: cover;
+    }
+}
+@media (min-width: 1920px)
+{
+    .container{
+        background-color: url(/assets/images/bg-desktop.jpg);
+        background-size: cover;        
+    }
+}
+@media (min-width: 2520px)
+{
+    .container{
+        background-color: url(/assets/images/bg-desktop.jpg);
+        background-size: cover;        
+    }
+}
+
+/* Fim do main - . container */
