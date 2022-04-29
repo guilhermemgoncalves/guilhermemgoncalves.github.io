@@ -25,7 +25,7 @@ const db = [
     
 },
 ];
-console.log(db[0].title);
+//console.log(db[0].title);
 const form = document.querySelector("#addNewTask");
 form.addEventListener("submit",(e) => {
     e.preventDefault();
@@ -33,11 +33,20 @@ form.addEventListener("submit",(e) => {
 const newTask = document.querySelector("#inputTxtNewTask");
 newTask.addEventListener('keyup', (e)=>{
     e.preventDefault();
-    if(e.key =="Enter")
+    e.stopPropagation();
+    if(e.key =="Enter") {
+    if(!newTask.value)
     {
-        db.push({id: Number(db.length) + 1, title: newTask.value});
-        alert(newTask.value);
+        alert("Digite uma nova tarefa para adicionar!")
     }
-    console.log(db); 
+    else
+    {
+        const d = new Date();
+        const today = `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`;
+        db.push({id: Number(db.length) + 1, title: newTask.value, done: false, dueDate: today,});
+        alert(newTask.value);
+        console.log(db); 
+    }
+    }   
 }
 )
